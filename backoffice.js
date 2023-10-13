@@ -152,3 +152,14 @@ const deleteEvent = function () {
       console.log("ERRORE!", err);
     });
 };
+
+const myEvent = function () {
+  let text;
+  if (confirm("Sicuro di voler eliminare??") == true) {
+    text = "OK!";
+    deleteEvent();
+  } else {
+    text = "cancel";
+  }
+  document.getElementById("demo").innerHTML = text;
+};
