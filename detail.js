@@ -61,7 +61,7 @@ const generateEventDetails = function (details) {
             </p>
             <p>Quando:${details.brand}</p>
             <p>Prezzo: ${details.price}€</p>
-            <button class="btn btn-danger" onclick="deleteEvent()">ELIMINA</button>
+            
             <a class="btn btn-warning" href="./backoffice.html?eventId=${details._id}">MODIFICA</a>
         </div>
     `;

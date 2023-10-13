@@ -128,3 +128,27 @@ formReference.addEventListener("submit", function (e) {
       console.log("Si è verificato un errore:", err);
     });
 });
+
+const deleteEvent = function () {
+  // questa funzione servirà ad eliminare l'evento corrente
+  fetch("https://striveschool-api.herokuapp.com/api/product/" + eventId, {
+    method: "DELETE",
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTI5MDAxYjEzOWM0MzAwMTg4MTQ1YTAiLCJpYXQiOjE2OTcxODU4MTksImV4cCI6MTY5ODM5NTQxOX0.7HTDwBzMOSPcFyGfOxyM-Lo8dO-uJZ01YsHcEJE8f34",
+    },
+  })
+    .then((res) => {
+      if (res.ok) {
+        // EVENTO ELIMINATO CORRETTAMENTE!
+        alert("prodotto ELIMINATO");
+        location.assign("./index.html"); // facciamo tornare l'utente in homepage
+      } else {
+        alert("Problema con l'eliminazione dell'evento");
+        throw new Error("Errore nella DELETE");
+      }
+    })
+    .catch((err) => {
+      console.log("ERRORE!", err);
+    });
+};
